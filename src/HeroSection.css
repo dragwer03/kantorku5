@@ -1,0 +1,20 @@
+.navbar, #landing-section {
+  background-color: #ecf2ff;
+}
+#landing-section {
+min-height: 80vh; /* Full viewport height */
+padding-top: 80px; /* Add some top padding to account for the navbar */
+padding-bottom: 80px; /* Add some bottom padding for spacing */
+}
+
+#landing-background-image {
+background-image: url('img/hearder-back-landing.png');
+background-size: 80% 100%;
+background-position: center;
+background-repeat: no-repeat;
+
+opacity: 1; /* Adjust this value to control the image opacity */
+}
+.navbar, #landing-section {
+background-color: #ecf2ff;
+}
