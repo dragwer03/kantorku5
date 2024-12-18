@@ -11,7 +11,7 @@ const HeroSection = () => {
         <h2 className="display-6 fw-bold text-primary mb-4 juduaatas">Attendance System</h2>
         <p className="lead text-muted mb-5 juduaatas">52.589.+ Startup & Companies Using our Software</p>
         <div className="d-flex justify-content-center gap-3">
-            <a href="" className="btn btn-primary btn-lg">Sign Up</a>
+            <a href="/signup" className="btn btn-primary btn-lg">Sign Up</a>           
             <a href="" className="btn btn-lg btn-outline-secondary d-flex align-items-center">
               <FontAwesomeIcon icon={faPlay} className="me-2" />
               See How it works

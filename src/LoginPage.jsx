@@ -1,7 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './LoginPage.css';
 
 const LoginPage = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
+  // Predefined credentials
+  const validCredentials = {
+    username: 'admin',
+    password: 'admin'
+  };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    if (username === validCredentials.username && password === validCredentials.password) {
+      setIsLoggedIn(true);
+      setError('');
+    } else {
+      setError('Invalid username or password');
+    }
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    setUsername('');
+    setPassword('');
+  };
+
+  if (isLoggedIn) {
+    return (
+      <div>
+        <h1>Welcome, {username}!</h1>
+        <button onClick={handleLogout}>Logout</button>
+      </div>
+    );
+  }
+
   return (
     <div className="Signin-page">
       <header className="header">
@@ -13,31 +49,46 @@ const LoginPage = () => {
         <section className="Signin-section">  
           <div className="text-center">
             <h2 className="Signin-title">Welcome to Kantorku</h2>
-            <p className="Signin-subtitle">Your Admin Dasboard</p>
+            <p className="Signin-subtitle">Your Admin Dashboard</p>
           </div>
 
           <div className="social-buttons">
-              <a href="#" className="social-button  no-underline">
-                <img src="img/google.png" alt="Google" className="social-icon  no-underline" />
-                <span className="text-[10px]"> <small>Sign up with Google</small></span>
-              </a>
-              <a href="#" className="social-button  no-underline">
-                <img src="img/fb.png" alt="Facebook" className="social-icon  no-underline" />
-                <span className="text-[10px]"><small>Sign up with Facebook</small></span>
-              </a>
-            </div>
-
-          <div className="divider">
-            <span className="divider-text">or Signin with</span>
+            <a href="#" className="social-button no-underline">
+              <img src="img/google.png" alt="Google" className="social-icon no-underline" />
+              <span className="text-[10px]"><small>Sign up with Google</small></span>
+            </a>
+            <a href="#" className="social-button no-underline">
+              <img src="img/fb.png" alt="Facebook" className="social-icon no-underline" />
+              <span className="text-[10px]"><small>Sign up with Facebook</small></span>
+            </a>
           </div>
 
-          <form className="Signin-form" action="/Signin" method="POST">
-            <input type="hidden" name="_token" value="6ifcpvg7puAZCFqj5ixQBEuEExt11vA0m7eNRXDs" />
+          <div className="divider">
+            <span className="divider-text">or Sign in with</span>
+          </div>
+
+          {error && <p style={{ color: 'red' }}>{error}</p>}
+
+          <form className="Signin-form" onSubmit={handleLogin}>
             <div className="form-inputs">
-              
-              <input id="username" name="username" type="text" required className="form-input" placeholder="Username" />
-              <input id="password" name="password" type="password" required className="form-input" placeholder="Password" />
-             
+              <input
+                type="text"
+                id="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                className="form-input"
+                placeholder="Username"
+                required
+              />
+              <input
+                type="password"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="form-input"
+                placeholder="Password"
+                required
+              />
             </div>
 
             <div className="form-options">
