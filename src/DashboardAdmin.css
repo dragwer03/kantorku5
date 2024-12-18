@@ -1,0 +1,89 @@
+/* DashboardAdmin.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(255, 255, 255);
+}
+
+/* Sidebar */
+.sidebar {
+    height: 100vh;
+    background-color: #f9fafe;
+    border-right: 1px solid #e4eaf1;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    display: block;
+    padding: 10px 15px;
+}
+
+.sidebar a.active {
+    color: #0d6efd;
+    background-color: #eaf2ff;
+    border-radius: 4px;
+}
+
+/* Header */
+.header-banner {
+    background-color: #eef3ff;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+/* Table */
+.role-badge {
+    background-color: #f0f8ff;
+    color: #0d6efd;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8em;
+}
+
+/* Top Menu */
+.top-menu {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e4eaf1;
+}
+
+.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Employee Table */
+.employee-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.icon-delete {
+    color: #dc3545;
+    cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        z-index: 1000;
+        transition: all 0.3s;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+}

@@ -8,7 +8,7 @@ import Last from "./Last";
 import Footerx from "./Footerx";
 import LoginPage from './LoginPage';
 import SignUpPage from './SignUpPage';
-
+import DashboardAdmin from './DashboardAdmin';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import "@fortawesome/fontawesome-svg-core/styles.css";
@@ -38,6 +38,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignUpPage />} />
+            <Route path="/admin" element= {<DashboardAdmin />} />
+            <Route path="/home" element={<Home />} />
           </Routes>
         </div>
       </div>

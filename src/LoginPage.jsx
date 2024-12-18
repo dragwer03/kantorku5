@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Navigate } from 'react-router-dom';
 import './LoginPage.css';
 
 const LoginPage = () => {
@@ -30,12 +31,7 @@ const LoginPage = () => {
   };
 
   if (isLoggedIn) {
-    return (
-      <div>
-        <h1>Welcome, {username}!</h1>
-        <button onClick={handleLogout}>Logout</button>
-      </div>
-    );
+    return <Navigate to="/admin" replace />;
   }
 
   return (
